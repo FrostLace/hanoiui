@@ -13,7 +13,7 @@ class Gm:
     def move(self,polea,poleb):
         a = self.firstNone(polea,1)
         b = self.firstNone(poleb)
-        print(a,b)
+        #print(a,b)
         if self.board[poleb][0] is not None:
             if self.board[polea][a] > self.board[poleb][b-1]:
                 return 1
