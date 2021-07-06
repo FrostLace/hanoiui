@@ -14,13 +14,15 @@ class Gm:
         a = self.firstNone(polea,1)
         b = self.firstNone(poleb)
         #print(a,b)
+        if polea == poleb:
+            return 0
         if self.board[poleb][0] is not None:
             if self.board[polea][a] > self.board[poleb][b-1]:
-                return 1
+                return 0
         del self.board[poleb][b]
         self.board[poleb].insert(b,self.board[polea].pop(a))
         self.board[polea].insert(a,None)
-        return 0
+        return 1
 
 
 
