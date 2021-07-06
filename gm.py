@@ -23,6 +23,10 @@ class Gm:
         self.board[poleb].insert(b,self.board[polea].pop(a))
         self.board[polea].insert(a,None)
         return 1
+    def restart(self):
+        self.board = [[None for y in range(self.ntiles)] for x in range(self.npoles)]
+        self.board[0] = list(range(self.ntiles))
+        self.board[0].reverse()
 
 
 

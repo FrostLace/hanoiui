@@ -77,11 +77,17 @@ scr.keypad(True)
 pole = None
 moves = 0
 while True:
-    drawBoard(0,0,hanoi.board,ntiles-1)
+    drawBoard(0,0,hanoi.board,ntiles-1,moves)
     scr.refresh()
     ch = scr.getch()
     if ch == ord("q"):
         break
+    if ch == ord("r"):
+        hanoi.restart()
+        moves = 0
+        scr.clear()
+        drawBoard(0,0,hanoi.board,ntiles-1,moves)
+        scr.refresh()
     if ch == curses.KEY_MOUSE:
         _,x,y,_,_ = curses.getmouse()
         if y <= ntiles + 1:
