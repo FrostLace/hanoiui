@@ -113,7 +113,7 @@ while True:
                     drawBoard(0,0,hanoi.board,ntiles-1,moves)
                     scr.refresh()
                     pole = None
-            except TypeError:
+            except ValueError:
                 pass #error
 
     if ch == curses.KEY_MOUSE:
