@@ -82,12 +82,42 @@ while True:
     ch = scr.getch()
     if ch == ord("q"):
         break
+
     if ch == ord("r"):
         hanoi.restart()
         moves = 0
         scr.clear()
         drawBoard(0,0,hanoi.board,ntiles-1,moves)
         scr.refresh()
+
+    if ch == ord("f"):
+        debugStr("f")
+        pole_input = scr.getch()
+        if pole_input == ord("q"):
+            pass
+        else:
+            try:
+                if (int(chr(pole_input)) <= npoles) and (int(chr(pole_input)) < 10):
+                    pole = int(chr(pole_input)) - 1
+                    debugStr(str(pole))
+            except TypeError:
+                pass #error
+
+    if (ch == ord("t")) and (pole is not None):
+        pole_input = scr.getch()
+        if pole_input == ord("q"):
+            pass
+        else:
+            try:
+                if (int(chr(pole_input)) <= npoles) and (int(chr(pole_input)) < 10):
+                    moves += hanoi.move(pole,int(chr(pole_input)) - 1)
+                    scr.clear()
+                    drawBoard(0,0,hanoi.board,ntiles-1,moves)
+                    scr.refresh()
+                    pole = None
+            except TypeError:
+                pass #error
+
     if ch == curses.KEY_MOUSE:
         _,x,y,_,_ = curses.getmouse()
         if y <= ntiles + 1:
