@@ -98,7 +98,7 @@ while True:
             try:
                 if (int(chr(pole_input)) <= npoles) and (int(chr(pole_input)) < 10):
                     pole = int(chr(pole_input)) - 1
-            except TypeError:
+            except ValueError:
                 pass #error
 
     if (ch == ord("t")) and (pole is not None):
