@@ -91,7 +91,6 @@ while True:
         scr.refresh()
 
     if ch == ord("f"):
-        debugStr("f")
         pole_input = scr.getch()
         if pole_input == ord("q"):
             pass
@@ -99,7 +98,6 @@ while True:
             try:
                 if (int(chr(pole_input)) <= npoles) and (int(chr(pole_input)) < 10):
                     pole = int(chr(pole_input)) - 1
-                    debugStr(str(pole))
             except TypeError:
                 pass #error
 
